@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chiemsee Kitchen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__brand" href="/">Chiemsee Kitchen</a>
+
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav__links">
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#speisekarte">Speisekarte</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero__media"
+        src="img4.jpg"
+        alt="Blick auf den Chiemsee">
+
+      <h1 class="hero__title">
+        ʀᴇɢɪᴏɴᴀʟᴇ ᴋüᴄʜᴇ ᴍɪᴛ ʜᴀᴜꜱɢᴇᴍᴀᴄʜᴛᴇꜱ ꜱᴏᴜʟꜰᴏᴏᴅ
+      </h1>
+    </section>
+  </main>
+
+  <section class="about" id="ueber-uns">
+    <div class="about__inner">
+
+      <div class="about__body">
+        <p>
+          Wir kochen mit dem, was die Region hergibt: Fisch aus dem Chiemsee,
+          Gemüse von den Höfen drumherum, Brot aus eigener Herstellung.
+        </p>
+        <p>
+          Kein Schnickschnack, keine langen Wege. Nur ehrliches Essen,
+          das satt macht – und ein Tisch, an dem man gerne sitzen bleibt.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+    <section class="strip" aria-label="Einblicke">
+    <img src="img.jpg" alt="Gedeckter Tisch im Chiemsee Kitchen">
+    <img src="img2.jpg" alt="Frischer Fisch auf dem Teller">
+    <img src="img3.jpg" alt="Regionale Zutaten auf dem Tisch">
+  </section>
+
+  <section class="menu" id="speisekarte">
+    <div class="menu__inner">
+
+      <div class="menu__col">
+        <h2 class="menu__title">Vorspeisen</h2>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <span class="menu__name">Räucherforelle vom Chiemsee</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">12,50 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Obazda mit Brezn</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">8,90 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Kürbissuppe mit Kürbiskernöl</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">7,50 €</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu__col">
+        <h2 class="menu__title">Hauptgerichte</h2>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <span class="menu__name">Zanderfilet auf Blattspinat</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">24,00 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Schweinebraten mit Semmelknödel</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">18,50 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Käsespätzle mit Röstzwiebeln</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">14,00 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Rindergulasch mit Rotkohl</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">19,50 €</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu__col">
+        <h2 class="menu__title">Süßes</h2>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <span class="menu__name">Apfelstrudel mit Vanillesoße</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">7,80 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Kaiserschmarrn mit Zwetschgenröster</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">11,00 €</span>
+          </li>
+          <li class="menu__item">
+            <span class="menu__name">Topfenknödel mit Marillen</span>
+            <span class="menu__leader" aria-hidden="true"></span>
+            <span class="menu__price">8,50 €</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+    <section class="info" id="kontakt">
+    <div class="info__inner">
+
+      <div class="info__head">
+        <p class="info__stamp">FRESH &amp; YUMMY</p>
+        <a class="info__insta" href="https://instagram.com/chiemseekitchen" aria-label="Instagram">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </a>
+        <p class="info__lead">
+          Am Wasser, mitten in Prien. Kommt vorbei, setzt euch, esst was Gutes –
+          wir freuen uns auf euch.
+        </p>
+      </div>
+
+      <div class="info__cols">
+        <div class="info__col">
+          <h3 class="info__title">Adresse</h3>
+          <p>Chiemsee Kitchen<br>Seestraße 12<br>83209 Prien am Chiemsee</p>
+        </div>
+
+        <div class="info__col">
+          <h3 class="info__title">Öffnungszeiten</h3>
+          <p>Mo – Fr 10.00 – 16.00<br>Küche: 11.30 – 15.00</p>
+        </div>
+
+        <div class="info__col">
+          <h3 class="info__title">Kontakt</h3>
+          <p>
+            <a href="mailto:hallo@chiemseekitchen.de">hallo@chiemseekitchen.de</a><br>
+            <a href="tel:+4915226156157">0152 261 561 57</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <section class="events" id="events">
+    <div class="events__inner">
+
+      <div class="events__col">
+        <h2 class="event__title">Die Kitchen macht Sommerpause<br>7. – 18. September</h2>
+        <div class="event__text">
+          <p>
+            Nach einem schönen und intensiven Sommer macht die kitchen eine kleine
+            Sommerpause. Vom 7. bis einschließlich 18. September bleibt die kitchen
+            daher kalt. Ab 21. September sind wir wieder wie gewohnt für euch da
+            und freuen uns auf eine ebenso schöne Spätsommerzeit mit euch!
+          </p>
+          <p>Bis ganz bald,<br>euer kitchen team</p>
+        </div>
+      </div>
+
+      <div class="events__col">
+        <h2 class="event__title">Live am See<br>24. August</h2>
+        <div class="event__text">
+          <p>
+            Zwei Gitarren, ein Steg und das Wasser im Rücken. Ab 19 Uhr spielen
+            die Chiemgauer Saiten bei uns im Hof – Eintritt frei, solange die
+            Stühle reichen.
+          </p>
+          <p>Bei Regen fällt es aus.</p>
+        </div>
+      </div>
+
+      <div class="events__col">
+        <h2 class="event__title">Lange Tafel<br>31. August</h2>
+        <div class="event__text">
+          <p>
+            Ein Tisch, vierzig Plätze, ein Menü aus dem, was am Morgen auf dem
+            Markt war. Anmeldung bis 28. August an der Theke oder per Mail.
+          </p>
+          <p>18:30 Uhr, 42 € pro Person.</p>
+        </div>
+      </div>
+
+      <div class="events__col">
+        <h2 class="event__title">Fischwoche<br>ab 4. Oktober</h2>
+        <div class="event__text">
+          <p>
+            Eine Woche lang dreht sich alles um den Chiemsee: Renke, Hecht,
+            Zander, jeden Tag anders. Die Karte wechselt täglich, die Preise
+            bleiben.
+          </p>
+          <p>Reservierung empfohlen.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+   <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <p class="footer__name">Chiemsee Kitchen</p>
+        <p class="footer__place">Prien am Chiemsee</p>
+      </div>
+
+      <div class="footer__mid">
+        <p>Mo – Fr 10.00 – 16.00</p>
+        <a href="mailto:hallo@chiemseekitchen.de">hallo@chiemseekitchen.de</a>
+      </div>
+
+      <nav class="footer__links" aria-label="Rechtliches">
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Privacy Policy</a>
+        <a href="#agb">Terms</a>
+        <a href="#cookies">Cookie-Einstellungen</a>
+      </nav>
+
+    </div>
+
+    <div class="footer__map">
+      <iframe
+        src="https://www.google.com/maps?q=Seestra%C3%9Fe+12,+83209+Prien+am+Chiemsee&output=embed"
+        title="Karte: Chiemsee Kitchen, Prien am Chiemsee"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </footer>
+  <div class="cookie" id="cookie" role="dialog" aria-label="Cookie-Hinweis" aria-live="polite">
+    <p class="cookie__text">
+      Wir nutzen Cookies, damit die Seite funktioniert und wir sehen, was gelesen wird.
+      Mehr dazu in der <a href="#datenschutz">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie__actions">
+      <button class="cookie__btn cookie__btn--ghost" type="button" data-cookie="essential">Nur nötige</button>
+      <button class="cookie__btn" type="button" data-cookie="all">Alle akzeptieren</button>
+    </div>
+  </div>
+</body>
+</html>
