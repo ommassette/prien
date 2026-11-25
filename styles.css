@@ -658,4 +658,115 @@ main{ flex: none; }
     flex: 1 1 auto;
     text-align: center;
   }
+    .review__controls{ gap: 10px; }
+  .review__nav{
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+}
+/* ---------- Stimmen ---------- */
+.review{
+  background: var(--white);
+  padding: 0 48px 128px;
+}
+
+.review__inner{
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.review__controls{
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.review__nav{
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  color: var(--pink);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 1;
+  padding: 0;
+}
+
+.review__nav:hover,
+.review__nav:focus-visible{
+  color: var(--ink);
+  outline: none;
+}
+
+/* pinke Linie sitzt jetzt hier – Buttons liegen darüber */
+.review__viewport{
+  display: grid;
+  width: 100%;
+  max-width: 58ch;
+  padding-top: 40px;
+  border-top: 2px solid var(--pink);
+}
+
+.review__slide{
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.review__slide.is-active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.review__quote p{
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.review__author{
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.review__btn{
+  display: inline-block;
+  margin-top: 4px;
+  padding: 14px 26px;
+  background: var(--pink);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 2px solid var(--pink);
+}
+
+.review__btn:hover,
+.review__btn:focus-visible{
+  background: var(--white);
+  color: var(--pink);
+  outline: none;
 }

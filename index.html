@@ -21,7 +21,7 @@
     <nav aria-label="Hauptnavigation">
       <ul class="nav__links">
         <li><a href="#ueber-uns">Über uns</a></li>
-        <li><a href="#speisekarte">Speisekarte</a></li>
+              <li><a href="#bewertungen">Stimmen</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -64,76 +64,54 @@
     <img src="img3.jpg" alt="Regionale Zutaten auf dem Tisch">
   </section>
 
-  <section class="menu" id="speisekarte">
-    <div class="menu__inner">
+    <section class="review" id="bewertungen">
+    <div class="review__inner">
 
-      <div class="menu__col">
-        <h2 class="menu__title">Vorspeisen</h2>
-        <ul class="menu__list">
-          <li class="menu__item">
-            <span class="menu__name">Räucherforelle vom Chiemsee</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">12,50 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Obazda mit Brezn</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">8,90 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Kürbissuppe mit Kürbiskernöl</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">7,50 €</span>
-          </li>
-        </ul>
+      <div class="review__controls">
+        <button class="review__nav" type="button" data-dir="prev" aria-label="Vorherige Bewertung">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button class="review__nav" type="button" data-dir="next" aria-label="Nächste Bewertung">
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
       </div>
 
-      <div class="menu__col">
-        <h2 class="menu__title">Hauptgerichte</h2>
-        <ul class="menu__list">
-          <li class="menu__item">
-            <span class="menu__name">Zanderfilet auf Blattspinat</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">24,00 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Schweinebraten mit Semmelknödel</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">18,50 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Käsespätzle mit Röstzwiebeln</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">14,00 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Rindergulasch mit Rotkohl</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">19,50 €</span>
-          </li>
-        </ul>
+      <div class="review__viewport" aria-live="polite">
+
+        <div class="review__slide is-active">
+          <blockquote class="review__quote">
+            <p>
+              „Wir sind auf dem Weg zum See hängen geblieben und erst zwei Stunden
+              später weitergefahren. Der Fisch war so gut, dass wir am nächsten Tag
+              gleich nochmal da waren.“
+            </p>
+          </blockquote>
+          <p class="review__author">— Anna &amp; Jonas, München</p>
+        </div>
+
+        <div class="review__slide">
+          <blockquote class="review__quote">
+            <p>
+              „Endlich wieder ein Ort, der nicht versucht, besonders zu sein.
+              Einfach gutes Essen, freundliche Leute und ein Blick aufs Wasser.“
+            </p>
+          </blockquote>
+          <p class="review__author">— Theresa, Rosenheim</p>
+        </div>
+
+        <div class="review__slide">
+          <blockquote class="review__quote">
+            <p>
+              „Wir waren zu sechst da, jeder hat etwas anderes bestellt, und
+              niemand wollte teilen. Das sagt, glaube ich, alles.“
+            </p>
+          </blockquote>
+          <p class="review__author">— Markus, Traunstein</p>
+        </div>
+
       </div>
 
-      <div class="menu__col">
-        <h2 class="menu__title">Süßes</h2>
-        <ul class="menu__list">
-          <li class="menu__item">
-            <span class="menu__name">Apfelstrudel mit Vanillesoße</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">7,80 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Kaiserschmarrn mit Zwetschgenröster</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">11,00 €</span>
-          </li>
-          <li class="menu__item">
-            <span class="menu__name">Topfenknödel mit Marillen</span>
-            <span class="menu__leader" aria-hidden="true"></span>
-            <span class="menu__price">8,50 €</span>
-          </li>
-        </ul>
-      </div>
+      <a class="review__btn" href="#bewertung-schreiben">Bewertung schreiben</a>
 
     </div>
   </section>
