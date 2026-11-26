@@ -12,7 +12,9 @@ html{
 }
 
 body{
-  font-family: "League Spartan", Arial, sans-serif;
+  font-family: 'Google Sans Flex', sans-serif;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
   background: var(--white);
   color: var(--ink);
   display: flex;
@@ -34,10 +36,12 @@ body{
 .nav__brand{
   color: var(--white);
   text-decoration: none;
+  font-family: 'Google Sans Flex', sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
+  text-transform: none;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -52,7 +56,8 @@ body{
   color: var(--white);
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-bottom: 2px;
@@ -65,8 +70,11 @@ body{
   outline: none;
 }
 
-/* ---------- Hero ---------- */
-main{ flex: none; }
+/* ---------- Unified Main Core ---------- */
+main.main-unified{
+  flex: none;
+  background: var(--white);
+}
 
 .hero{
   position: relative;
@@ -91,8 +99,11 @@ main{ flex: none; }
   margin: 0;
   max-width: 22ch;
   color: var(--white);
+  font-family: 'Fredoka', sans-serif;
   font-size: clamp(24px, 3.2vw, 46px);
-  font-weight: 500;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
   line-height: 1.14;
   letter-spacing: 0.01em;
 }
@@ -100,7 +111,7 @@ main{ flex: none; }
 /* ---------- About ---------- */
 .about{
   background: var(--white);
-  padding: 104px 48px 112px;
+  padding: 96px 48px 96px;
 }
 
 .about__inner{
@@ -144,7 +155,7 @@ main{ flex: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   line-height: 0;
-  margin-bottom: 104px;
+  margin-bottom: 96px;
 }
 
 .strip img{
@@ -159,7 +170,7 @@ main{ flex: none; }
 /* ---------- Philosophie ---------- */
 .philo{
   background: var(--white);
-  padding: 0 48px 128px;
+  padding: 0 48px 112px;
 }
 
 .philo__inner{
@@ -191,7 +202,8 @@ main{ flex: none; }
 
 .philo__statement{
   font-size: clamp(22px, 2.6vw, 34px);
-  font-weight: 500;
+  font-weight: 100;
+  font-variation-settings: "wght" 100;
   line-height: 1.3;
   letter-spacing: 0.01em;
   max-width: 22ch;
@@ -217,8 +229,11 @@ main{ flex: none; }
 
 .philo__title{
   color: var(--ink);
-  font-size: 18px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px;
   font-weight: 700;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
   line-height: 1.3;
   margin-bottom: 10px;
 }
@@ -227,6 +242,51 @@ main{ flex: none; }
   font-size: 15px;
   line-height: 1.65;
   max-width: 42ch;
+}
+
+/* ---------- Events (Prominent & Expanded) ---------- */
+.events{
+  background: var(--white);
+  padding: 24px 48px 168px;
+}
+
+.events__inner{
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 72px 64px;
+  align-items: start;
+}
+
+.events__col{
+  border-top: 4px solid var(--pink);
+  padding-top: 32px;
+}
+
+.events__col:nth-child(2){ margin-top: 40px; border-top-width: 4px; }
+.events__col:nth-child(3){ margin-top: 0; border-top-width: 4px; }
+.events__col:nth-child(4){ margin-top: 40px; border-top-width: 4px; }
+
+.event__title{
+  color: var(--pink);
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  margin-bottom: 24px;
+}
+
+.event__text{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: clamp(17px, 1.25vw, 20px);
+  line-height: 1.75;
+  color: var(--ink);
 }
 
 /* ---------- Info ---------- */
@@ -256,10 +316,12 @@ main{ flex: none; }
 
 .info__stamp{
   color: var(--pink);
+  font-family: 'Fredoka', sans-serif;
   font-size: clamp(24px, 2.8vw, 36px);
   font-weight: 700;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   margin: 0;
 }
 
@@ -301,10 +363,12 @@ main{ flex: none; }
 
 .info__title{
   color: var(--pink);
-  font-size: 14px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
+  letter-spacing: 0.12em;
   margin-bottom: 14px;
 }
 
@@ -321,47 +385,12 @@ main{ flex: none; }
   outline: none;
 }
 
-/* ---------- Events ---------- */
-.events{
-  background: var(--white);
-  padding: 0 48px 144px;
-}
-
-.events__inner{
-  max-width: 1320px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr 1.1fr 0.9fr;
-  gap: 48px 40px;
-  align-items: start;
-}
-
-.events__col{
-  border-top: 2px solid var(--pink);
-  padding-top: 22px;
-}
-
-.events__col:nth-child(2){ margin-top: 58px; border-top-width: 3px; }
-.events__col:nth-child(3){ margin-top: 20px; }
-.events__col:nth-child(4){ margin-top: 84px; border-top-width: 4px; }
-
-.event__title{
-  color: var(--pink);
-  font-size: clamp(16px, 1.5vw, 20px);
+.brand-kitchen{
+  font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  line-height: 1.22;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.event__text{
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink);
 }
 
 /* ---------- Footer ---------- */
@@ -388,10 +417,12 @@ main{ flex: none; }
 }
 
 .footer__name{
+  font-family: 'Google Sans Flex', sans-serif;
   font-size: clamp(18px, 2vw, 22px);
-  font-weight: 700;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
+  text-transform: none;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .footer__place{
@@ -427,7 +458,8 @@ main{ flex: none; }
   color: var(--white);
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border-bottom: 2px solid transparent;
@@ -558,7 +590,7 @@ main{ flex: none; }
 
   .info__cols,
   .events__inner{
-    gap: 40px 32px;
+    gap: 48px 40px;
   }
 
   .philo__inner{
@@ -603,7 +635,6 @@ main{ flex: none; }
     min-height: 120px;
   }
 
-  /* Philosophie – echte Einspaltigkeit, alles linksbündig */
   .philo{ padding: 0 20px 72px; }
   .philo__inner{
     grid-template-columns: 1fr;
@@ -623,6 +654,22 @@ main{ flex: none; }
   .philo__item:nth-child(3){ margin-left: 0; }
   .philo__text{ max-width: none; }
 
+  .events{ padding: 16px 20px 96px; }
+  .events__inner{
+    grid-template-columns: 1fr;
+    gap: 56px;
+    justify-items: start;
+    text-align: left;
+  }
+  .events__col{
+    max-width: none;
+    width: 100%;
+    padding-top: 24px;
+  }
+  .events__col:nth-child(2),
+  .events__col:nth-child(3),
+  .events__col:nth-child(4){ margin-top: 0; }
+
   .info{ padding: 0 20px 72px; }
   .info__inner{
     align-items: center;
@@ -640,21 +687,6 @@ main{ flex: none; }
     justify-items: center;
     text-align: center;
   }
-
-  .events{ padding: 0 20px 80px; }
-  .events__inner{
-    grid-template-columns: 1fr;
-    gap: 44px;
-    justify-items: center;
-    text-align: center;
-  }
-  .events__col{
-    max-width: 46ch;
-    width: 100%;
-  }
-  .events__col:nth-child(2),
-  .events__col:nth-child(3),
-  .events__col:nth-child(4){ margin-top: 0; }
 
   .footer{ padding: 56px 20px 0; }
   .footer__inner{
@@ -684,33 +716,4 @@ main{ flex: none; }
     flex: 1 1 auto;
     text-align: center;
   }
-}
-body {
-  font-family: 'Google Sans Flex', sans-serif;
-  font-weight: 950;
-  font-variation-settings: "wght" 100;
-}
-
-h1, h2, h3, h4, h5, h6,
-.info__stamp {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-variation-settings: "wght" 700;
-  text-transform: none;
-}
-
-.nav__brand,
-.footer__name {
-  font-family: 'Google Sans Flex', sans-serif;
-  font-weight: 950;
-  font-variation-settings: "wght" 100;
-  text-transform: none;
-}
-
-.brand-kitchen {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-variation-settings: "wght" 700;
-  text-transform: none;
-  letter-spacing: 0.02em;
 }
