@@ -781,3 +781,219 @@ main.main-unified{
     gap: 14px 20px;
   }
 }
+
+/* ---------- Custom Pink Circle Cursor (Desktop Pointer) ---------- */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, .event__title {
+    cursor: none;
+  }
+
+  .pink-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: var(--pink);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.18s ease, opacity 0.2s ease, background-color 0.18s ease;
+    opacity: 0;
+  }
+
+  .pink-cursor.is-visible {
+    opacity: 1;
+  }
+
+  .pink-cursor.is-active {
+    transform: translate(-50%, -50%) scale(2.1);
+    background: rgba(231, 31, 104, 0.85);
+  }
+}
+
+/* ---------- Touch Ripple (Mobile / Touch Devices) ---------- */
+.touch-pulse {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--pink);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0.9;
+  animation: pulseExpand 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes pulseExpand {
+  to {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* ---------- Event Poster Hover Preview ---------- */
+.event__title {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.event__title:hover,
+.event__title:focus-visible {
+  transform: translateX(4px);
+}
+
+.event-poster-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  aspect-ratio: 3 / 4;
+  background: var(--white);
+  border: 3px solid var(--pink);
+  box-shadow: 8px 8px 0 rgba(231, 31, 104, 0.22);
+  pointer-events: none;
+  z-index: 9500;
+  opacity: 0;
+  transform: translate(18px, 18px) scale(0.94);
+  transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.event-poster-preview.is-open {
+  opacity: 1;
+  transform: translate(18px, 18px) scale(1);
+}
+
+.event-poster-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Subtle Scroll Reveal & Micro-Motion ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.strip img {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.strip img:hover {
+  transform: scale(1.025);
+}
+
+.nav__links a,
+.footer__links a,
+.info__col a,
+.info__insta {
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.info__insta:hover {
+  transform: translateY(-2px);
+}
+
+.cookie__btn {
+  transition: transform 0.16s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.cookie__btn:active {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .pink-cursor,
+  .touch-pulse {
+    display: none;
+  }
+}
+.nav__toggle {
+  display: none;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__toggle:hover,
+.nav__toggle:focus-visible {
+  background: var(--white);
+  color: var(--pink);
+  outline: none;
+}
+
+.nav__toggle:active {
+  transform: scale(0.94);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    z-index: 200;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+  }
+
+  .nav__drawer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--pink);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, padding 0.28s ease;
+  }
+
+  .nav.is-open .nav__drawer {
+    max-height: 320px;
+    opacity: 1;
+    padding: 18px 20px 24px;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .nav__links a {
+    display: inline-block;
+    font-size: 15px;
+    padding-bottom: 4px;
+  }
+}
