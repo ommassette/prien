@@ -726,3 +726,58 @@ main.main-unified{
   object-position: center;
   margin-top: 8px;
 }
+.footer__inner{
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  padding-bottom: 64px;
+}
+
+.footer__brand{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__links{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+.footer__links a:nth-child(2),
+.footer__links a:nth-child(3),
+.footer__links a:nth-child(4){
+  margin-left: 0;
+}
+
+@media (max-width: 1000px){
+  .footer__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 720px){
+  .footer__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 48px;
+  }
+
+  .footer__links{
+    gap: 14px 20px;
+  }
+}
