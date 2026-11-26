@@ -685,3 +685,32 @@ main{ flex: none; }
     text-align: center;
   }
 }
+body {
+  font-family: 'Google Sans Flex', sans-serif;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
+}
+
+h1, h2, h3, h4, h5, h6,
+.info__stamp {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
+}
+
+.nav__brand,
+.footer__name {
+  font-family: 'Google Sans Flex', sans-serif;
+  font-weight: 950;
+  font-variation-settings: "wght" 100;
+  text-transform: none;
+}
+
+.brand-kitchen {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
