@@ -146,43 +146,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* 6. Mobile Hamburger Menu */
-  const navEl = document.querySelector(".nav");
-  const navToggle = document.querySelector(".nav__toggle");
-  const navDrawer = document.getElementById("primary-nav");
+(function () {
+  const introSection = document.getElementById("intro-section");
+  const introStage = document.getElementById("intro-stage");
+  if (!introSection || !introStage) return;
 
-  if (navEl && navToggle && navDrawer) {
-    const iconEl = navToggle.querySelector("i");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
 
-    const setMenuState = (open) => {
-      navEl.classList.toggle("is-open", open);
-      navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
-      if (iconEl) {
-        iconEl.className = open ? "bi bi-x-lg" : "bi bi-list";
-      }
-    };
+  let ticking = false;
 
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = !navEl.classList.contains("is-open");
-      setMenuState(isOpen);
-    });
+  const updateIntroSlide = () => {
+    ticking = false;
+    const rect = introSection.getBoundingClientRect();
+    const scrollableDistance = introSection.offsetHeight - window.innerHeight;
 
-    navDrawer.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => setMenuState(false));
-    });
+    if (scrollableDistance <= 0) {
+      introStage.style.setProperty("--intro-progress", "0");
+      return;
+    }
 
-    document.addEventListener("click", (e) => {
-      if (navEl.classList.contains("is-open") && !navEl.contains(e.target)) {
-        setMenuState(false);
-      }
-    });
+    const scrolledPast = Math.min(Math.max(-rect.top, 0), scrollableDistance);
+    const progress = scrolledPast / scrollableDistance;
+    introStage.style.setProperty("--intro-progress", progress.toFixed(4));
+  };
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && navEl.classList.contains("is-open")) {
-        setMenuState(false);
-        navToggle.focus();
-      }
-    });
-  }
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateIntroSlide);
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  updateIntroSlide();
+})();

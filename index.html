@@ -15,33 +15,22 @@
 </head>
 <body>
 
-  <header class="nav">
-    <a class="nav__brand" href="/">chiemsee <span class="brand-kitchen">KiTCHEN</span></a>
+  <section class="intro" id="intro-section" aria-label="Willkommen bei chiemsee KiTCHEN">
+    <div class="intro__stage" id="intro-stage">
+      <svg class="intro__squiggle intro__squiggle--left" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M55 0 C 12 140, 105 270, 48 420 C -6 565, 102 710, 52 860 C 26 935, 44 975, 58 1000" fill="none" stroke="currentColor" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      </svg>
 
-    <button
-      class="nav__toggle"
-      type="button"
-      aria-label="Menü öffnen"
-      aria-expanded="false"
-      aria-controls="primary-nav">
-      <i class="bi bi-list" aria-hidden="true"></i>
-    </button>
+      <h1 class="intro__title">
+        <span class="intro__line-top">chiemsee</span>
+        <span class="intro__line-bottom">KiTCHEN</span>
+      </h1>
 
-    <nav id="primary-nav" class="nav__drawer" aria-label="Hauptnavigation">
-      <ul class="nav__links">
-        <li><a href="#ueber-uns">Über uns</a></li>
-        <li><a href="#philosophie">Philosophie</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-
-      <div class="nav__drawer-meta">
-        <span>Seestraße 12, 83209 Prien am Chiemsee</span>
-        <a href="mailto:hallo@chiemseekitchen.de">hallo@chiemseekitchen.de</a>
-        <a href="tel:+4915226156157">0152 261 561 57</a>
-      </div>
-    </nav>
-  </header>
+      <svg class="intro__squiggle intro__squiggle--right" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M62 0 C 106 150, 14 290, 68 445 C 118 590, 16 740, 65 885 C 88 945, 72 980, 58 1000" fill="none" stroke="currentColor" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      </svg>
+    </div>
+  </section>
 
   <main class="main-unified">
     <section class="hero">
@@ -50,9 +39,9 @@
         src="img4.jpg"
         alt="Blick auf den Chiemsee">
 
-      <h1 class="hero__title">
+      <h2 class="hero__title">
         Regionale Küche mit hausgemachtem Soulfood
-      </h1>
+      </h2>
     </section>
 
     <section class="about" id="ueber-uns">
