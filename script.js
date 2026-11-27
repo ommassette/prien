@@ -149,30 +149,60 @@ document.addEventListener("DOMContentLoaded", () => {
 (function () {
   const introSection = document.getElementById("intro-section");
   const introStage = document.getElementById("intro-stage");
+  const mainEl = document.querySelector("main.main-unified");
   if (!introSection || !introStage) return;
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) return;
-
+  let dismissed = false;
   let ticking = false;
+
+  const dismissIntroPermanently = () => {
+    if (dismissed) return;
+    dismissed = true;
+
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+
+    const prevScrollY = window.scrollY;
+    const removedHeight = introSection.offsetHeight;
+
+    introSection.classList.add("is-dismissed");
+    if (mainEl) {
+      mainEl.classList.add("intro-dismissed");
+    }
+
+    const nextScrollY = Math.max(0, prevScrollY - removedHeight);
+    window.scrollTo(0, nextScrollY);
+  };
+
+  if (prefersReducedMotion) {
+    dismissIntroPermanently();
+    return;
+  }
 
   const updateIntroSlide = () => {
     ticking = false;
+    if (dismissed) return;
+
     const rect = introSection.getBoundingClientRect();
     const scrollableDistance = introSection.offsetHeight - window.innerHeight;
 
     if (scrollableDistance <= 0) {
-      introStage.style.setProperty("--intro-progress", "0");
+      dismissIntroPermanently();
       return;
     }
 
     const scrolledPast = Math.min(Math.max(-rect.top, 0), scrollableDistance);
     const progress = scrolledPast / scrollableDistance;
     introStage.style.setProperty("--intro-progress", progress.toFixed(4));
+
+    if (progress >= 1) {
+      dismissIntroPermanently();
+    }
   };
 
   const onScroll = () => {
-    if (!ticking) {
+    if (!ticking && !dismissed) {
       ticking = true;
       window.requestAnimationFrame(updateIntroSlide);
     }

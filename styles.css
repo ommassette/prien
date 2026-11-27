@@ -24,13 +24,17 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- White Intro Section (Slides Left as Page Comes In) ---------- */
+/* ---------- White Intro Section (Slides Left Once, Never Returns Until Reload) ---------- */
 .intro{
   position: relative;
   height: 160vh;
   width: 100%;
   z-index: 20;
   pointer-events: none;
+}
+
+.intro.is-dismissed{
+  display: none;
 }
 
 .intro__stage{
@@ -104,6 +108,10 @@ main.main-unified{
   flex: none;
   margin-top: -160vh;
   background: var(--white);
+}
+
+main.main-unified.intro-dismissed{
+  margin-top: 0;
 }
 
 .hero{
