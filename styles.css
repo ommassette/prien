@@ -70,7 +70,24 @@ body{
   outline: none;
 }
 
-/* ---------- Unified Main Core ---------- */
+.nav__toggle{
+  display: none;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav__drawer-meta{
+  display: none;
+}
+
+/* ---------- Hero ---------- */
 main.main-unified{
   flex: none;
   background: var(--white);
@@ -81,7 +98,7 @@ main.main-unified{
   height: 82vh;
   min-height: 360px;
   overflow: hidden;
-  background: var(--white);
+  background: transparent;
 }
 
 .hero__media{
@@ -96,9 +113,12 @@ main.main-unified{
   position: absolute;
   left: 48px;
   bottom: 40px;
+  z-index: 2;
   margin: 0;
   max-width: 22ch;
   color: var(--white);
+  background: none;
+  background-color: transparent;
   font-family: 'Fredoka', sans-serif;
   font-size: clamp(24px, 3.2vw, 46px);
   font-weight: 700;
@@ -165,6 +185,11 @@ main.main-unified{
   min-height: 160px;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.strip img:hover{
+  transform: scale(1.025);
 }
 
 /* ---------- Philosophie ---------- */
@@ -189,17 +214,6 @@ main.main-unified{
   padding-top: 6px;
 }
 
-.philo__kicker{
-  color: var(--pink);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--pink);
-  align-self: flex-start;
-}
-
 .philo__statement{
   font-size: clamp(22px, 2.6vw, 34px);
   font-weight: 100;
@@ -207,6 +221,16 @@ main.main-unified{
   line-height: 1.3;
   letter-spacing: 0.01em;
   max-width: 22ch;
+}
+
+.philo__media{
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 8px;
 }
 
 .philo__items{
@@ -244,7 +268,7 @@ main.main-unified{
   max-width: 42ch;
 }
 
-/* ---------- Events (Prominent & Expanded) ---------- */
+/* ---------- Events ---------- */
 .events{
   background: var(--white);
   padding: 24px 48px 168px;
@@ -264,9 +288,9 @@ main.main-unified{
   padding-top: 32px;
 }
 
-.events__col:nth-child(2){ margin-top: 40px; border-top-width: 4px; }
-.events__col:nth-child(3){ margin-top: 0; border-top-width: 4px; }
-.events__col:nth-child(4){ margin-top: 40px; border-top-width: 4px; }
+.events__col:nth-child(2){ margin-top: 40px; }
+.events__col:nth-child(3){ margin-top: 0; }
+.events__col:nth-child(4){ margin-top: 40px; }
 
 .event__title{
   color: var(--pink);
@@ -278,6 +302,14 @@ main.main-unified{
   line-height: 1.16;
   letter-spacing: 0.01em;
   margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.event__title:hover,
+.event__title:focus-visible{
+  transform: translateX(4px);
 }
 
 .event__text{
@@ -331,11 +363,13 @@ main.main-unified{
   line-height: 1;
   text-decoration: none;
   margin-top: -4px;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .info__insta:hover,
 .info__insta:focus-visible{
   color: var(--ink);
+  transform: translateY(-2px);
   outline: none;
 }
 
@@ -377,6 +411,7 @@ main.main-unified{
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding-bottom: 1px;
+  transition: border-color 0.2s ease;
 }
 
 .info__col a:hover,
@@ -403,17 +438,19 @@ main.main-unified{
 .footer__inner{
   max-width: 1320px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr 0.7fr;
-  gap: 56px 72px;
-  align-items: start;
-  padding-bottom: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  padding-bottom: 64px;
 }
 
 .footer__brand{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer__name{
@@ -430,28 +467,13 @@ main.main-unified{
   letter-spacing: 0.04em;
 }
 
-.footer__mid{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 15px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-}
-
-.footer__mid a{
-  color: var(--white);
-  text-decoration: none;
-  align-self: flex-start;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 1px;
-}
-
 .footer__links{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 32px;
 }
 
 .footer__links a{
@@ -464,14 +486,9 @@ main.main-unified{
   text-transform: uppercase;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
+  transition: border-color 0.2s ease;
 }
 
-.footer__links a:nth-child(2){ margin-left: 14px; }
-.footer__links a:nth-child(3){ margin-left: 6px; }
-.footer__links a:nth-child(4){ margin-left: 20px; }
-
-.footer__mid a:hover,
-.footer__mid a:focus-visible,
 .footer__links a:hover,
 .footer__links a:focus-visible{
   border-bottom-color: var(--white);
@@ -500,7 +517,7 @@ main.main-unified{
   left: 20px;
   right: 20px;
   bottom: 20px;
-  z-index: 100;
+  z-index: 500;
   max-width: 720px;
   margin: 0 auto;
   background: var(--white);
@@ -554,6 +571,7 @@ main.main-unified{
   background: var(--pink);
   color: var(--white);
   cursor: pointer;
+  transition: transform 0.16s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
 
 .cookie__btn--ghost{
@@ -574,6 +592,125 @@ main.main-unified{
   background: var(--pink);
   border-color: var(--pink);
   color: var(--white);
+}
+
+.cookie__btn:active{
+  transform: scale(0.96);
+}
+
+/* ---------- Custom Pink Circle Cursor ---------- */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, .event__title {
+    cursor: none;
+  }
+
+  .pink-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: var(--pink);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.18s ease, opacity 0.2s ease, background-color 0.18s ease;
+    opacity: 0;
+  }
+
+  .pink-cursor.is-visible { opacity: 1; }
+
+  .pink-cursor.is-active {
+    transform: translate(-50%, -50%) scale(2.1);
+    background: rgba(231, 31, 104, 0.85);
+  }
+}
+
+/* ---------- Touch Ripple ---------- */
+.touch-pulse {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--pink);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0.9;
+  animation: pulseExpand 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes pulseExpand {
+  to {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* ---------- Event Poster Preview ---------- */
+.event-poster-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  aspect-ratio: 3 / 4;
+  background: var(--white);
+  border: 3px solid var(--pink);
+  box-shadow: 8px 8px 0 rgba(231, 31, 104, 0.22);
+  pointer-events: none;
+  z-index: 9500;
+  opacity: 0;
+  transform: translate(18px, 18px) scale(0.94);
+  transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.event-poster-preview.is-open {
+  opacity: 1;
+  transform: translate(18px, 18px) scale(1);
+}
+
+.event-poster-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Scroll Reveal ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav__links a,
+.footer__links a,
+.info__col a,
+.info__insta {
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .pink-cursor,
+  .touch-pulse {
+    display: none;
+  }
+  .nav__toggle,
+  .nav__drawer{
+    transition: none;
+  }
 }
 
 /* ---------- Tablet ---------- */
@@ -598,32 +735,178 @@ main.main-unified{
   }
 
   .footer__inner{
-    grid-template-columns: 1fr 1fr;
-    gap: 48px 40px;
+    gap: 28px;
   }
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 720px){
-  .nav{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px 20px;
-  }
-  .nav__links{
-    gap: 18px;
-    flex-wrap: wrap;
+
+  body{
+    padding-bottom: 0;
   }
 
+  /* --- Sticky centered pink title with no background --- */
+  .nav{
+    position: sticky;
+    top: 0;
+    background: transparent !important;
+    background-color: transparent !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 18px;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 900;
+    pointer-events: none;
+  }
+
+  .nav__brand{
+    pointer-events: auto;
+    color: var(--pink);
+    background: transparent;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 110px);
+  }
+
+  /* --- Custom angled right-edge toggle at vertical mid --- */
+  .nav__toggle{
+    pointer-events: auto;
+    display: inline-flex !important;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    border-radius: 0;
+    clip-path: polygon(22% 0, 100% 0, 100% 100%, 22% 100%, 0 50%);
+    -webkit-clip-path: polygon(22% 0, 100% 0, 100% 100%, 22% 100%, 0 50%);
+    padding-left: 6px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1010;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .nav__toggle:hover,
+  .nav__toggle:focus-visible{
+    background: var(--ink);
+    color: var(--white);
+    outline: none;
+  }
+
+  .nav__toggle:active{
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  /* --- Full-height drawer sliding from right to center of viewport --- */
+  .nav__drawer{
+    pointer-events: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50vw;
+    min-width: 240px;
+    background: var(--pink);
+    color: var(--white);
+    padding: 84px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s linear 0.38s;
+    z-index: 1000;
+    box-shadow: -12px 0 36px rgba(17, 17, 17, 0.22);
+  }
+
+  .nav.is-open .nav__drawer{
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s;
+  }
+
+  .nav__links{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .nav__links li{
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .nav__links li:last-child{
+    border-bottom: none;
+  }
+
+  .nav__links a{
+    display: block;
+    color: var(--white);
+    font-size: 16px;
+    padding: 14px 0;
+    border-bottom: none;
+    text-align: left;
+  }
+
+  .nav__links a:hover,
+  .nav__links a:focus-visible{
+    border-bottom-color: transparent;
+    opacity: 0.75;
+  }
+
+  .nav__drawer-meta{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 24px;
+    border-top: 2px solid var(--white);
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+  }
+
+  .nav__drawer-meta a{
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    padding-bottom: 2px;
+    width: fit-content;
+  }
+
+  /* --- Hero image full-bleed under sticky header, no white box behind title --- */
   .hero{
     height: 56vh;
     min-height: 300px;
+    margin-top: -52px;
+    background: transparent;
   }
   .hero__title{
     left: 20px;
     bottom: 20px;
     max-width: 18ch;
+    background: transparent !important;
+    background-color: transparent !important;
   }
 
   .about{ padding: 56px 20px 64px; }
@@ -690,13 +973,12 @@ main.main-unified{
 
   .footer{ padding: 56px 20px 0; }
   .footer__inner{
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding-bottom: 56px;
+    gap: 24px;
+    padding-bottom: 48px;
   }
-  .footer__links a:nth-child(2),
-  .footer__links a:nth-child(3),
-  .footer__links a:nth-child(4){ margin-left: 0; }
+  .footer__links{
+    gap: 14px 20px;
+  }
 
   .footer__map{
     aspect-ratio: 16 / 9;
@@ -715,285 +997,5 @@ main.main-unified{
   .cookie__btn{
     flex: 1 1 auto;
     text-align: center;
-  }
-}
-.philo__media {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center;
-  margin-top: 8px;
-}
-.footer__inner{
-  max-width: 1320px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 28px;
-  padding-bottom: 64px;
-}
-
-.footer__brand{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer__links{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 16px 32px;
-}
-
-.footer__links a:nth-child(2),
-.footer__links a:nth-child(3),
-.footer__links a:nth-child(4){
-  margin-left: 0;
-}
-
-@media (max-width: 1000px){
-  .footer__inner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-}
-
-@media (max-width: 720px){
-  .footer__inner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding-bottom: 48px;
-  }
-
-  .footer__links{
-    gap: 14px 20px;
-  }
-}
-
-/* ---------- Custom Pink Circle Cursor (Desktop Pointer) ---------- */
-@media (hover: hover) and (pointer: fine) {
-  body, a, button, .event__title {
-    cursor: none;
-  }
-
-  .pink-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    background: var(--pink);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.18s ease, opacity 0.2s ease, background-color 0.18s ease;
-    opacity: 0;
-  }
-
-  .pink-cursor.is-visible {
-    opacity: 1;
-  }
-
-  .pink-cursor.is-active {
-    transform: translate(-50%, -50%) scale(2.1);
-    background: rgba(231, 31, 104, 0.85);
-  }
-}
-
-/* ---------- Touch Ripple (Mobile / Touch Devices) ---------- */
-.touch-pulse {
-  position: fixed;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid var(--pink);
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%) scale(0.4);
-  opacity: 0.9;
-  animation: pulseExpand 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes pulseExpand {
-  to {
-    transform: translate(-50%, -50%) scale(2.4);
-    opacity: 0;
-  }
-}
-
-/* ---------- Event Poster Hover Preview ---------- */
-.event__title {
-  position: relative;
-  display: inline-block;
-  transition: transform 0.22s ease, color 0.22s ease;
-}
-
-.event__title:hover,
-.event__title:focus-visible {
-  transform: translateX(4px);
-}
-
-.event-poster-preview {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 230px;
-  aspect-ratio: 3 / 4;
-  background: var(--white);
-  border: 3px solid var(--pink);
-  box-shadow: 8px 8px 0 rgba(231, 31, 104, 0.22);
-  pointer-events: none;
-  z-index: 9500;
-  opacity: 0;
-  transform: translate(18px, 18px) scale(0.94);
-  transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-  overflow: hidden;
-}
-
-.event-poster-preview.is-open {
-  opacity: 1;
-  transform: translate(18px, 18px) scale(1);
-}
-
-.event-poster-preview img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---------- Subtle Scroll Reveal & Micro-Motion ---------- */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-[data-reveal].is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.strip img {
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.strip img:hover {
-  transform: scale(1.025);
-}
-
-.nav__links a,
-.footer__links a,
-.info__col a,
-.info__insta {
-  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.info__insta:hover {
-  transform: translateY(-2px);
-}
-
-.cookie__btn {
-  transition: transform 0.16s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
-}
-
-.cookie__btn:active {
-  transform: scale(0.96);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .pink-cursor,
-  .touch-pulse {
-    display: none;
-  }
-}
-.nav__toggle {
-  display: none;
-  background: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-  width: 42px;
-  height: 42px;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-.nav__toggle:hover,
-.nav__toggle:focus-visible {
-  background: var(--white);
-  color: var(--pink);
-  outline: none;
-}
-
-.nav__toggle:active {
-  transform: scale(0.94);
-}
-
-@media (max-width: 720px) {
-  .nav {
-    position: relative;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    z-index: 200;
-  }
-
-  .nav__toggle {
-    display: inline-flex;
-  }
-
-  .nav__drawer {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--pink);
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 0 20px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, padding 0.28s ease;
-  }
-
-  .nav.is-open .nav__drawer {
-    max-height: 320px;
-    opacity: 1;
-    padding: 18px 20px 24px;
-  }
-
-  .nav__links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    width: 100%;
-  }
-
-  .nav__links a {
-    display: inline-block;
-    font-size: 15px;
-    padding-bottom: 4px;
   }
 }
